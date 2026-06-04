@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HASTANE</title>
+  <link rel="stylesheet" href="anasayfa.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid"> 
+    <img src="resim/logo.png" >
+    <a class="navbar-brand" aria-current="page" href="anasayfa.html">HASTANE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="hakkimizda.html">HAKKIMIZDA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="kayit.html">KAYIT</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            GİRİŞ
+          </a>
+          <ul class="dropdown-menu" style="right: 0; left: auto;">
+            <li><a class="dropdown-item" href="hastaGirisiSifre.html">Hasta Girişi</a></li>
+            <li><a class="dropdown-item" href="doktorGirisiSifre.html">Doktor Girişi</a></li>
+            <li><a class="dropdown-item" href="hemsireGirisiSifre.html">Hemşire Girişi</a></li>
+            <li><a class="dropdown-item" href="memurGirisiSifre.html">Memur Girişi</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Başlık altındaki kayan resimler-->
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="resim/kayanResim1.jfif" class="d-block w-100">
+    </div>
+
+    <div class="carousel-item">
+      <img src="resim/kayanResim2.jfif" class="d-block w-100">
+    </div>
+
+    <div class="carousel-item">
+      <img src="resim/kayanResim3.jfif" class="d-block w-100">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<!--  Kartlar  -->
+  <div class="container py-5">
+        <div class="row g-5 justify-content-center">
+            
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="circle-card">
+                    <h5 class="circle-card-title">Kulak Burun Boğaz</h5>
+                    <a href="poliklinlikler.html#kbb" class="btn circle-card-btn">Detaylar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="circle-card">
+                    <h5 class="circle-card-title">İç Hastalıkları (Dahiliye)</h5>
+                    <a href="poliklinlikler.html#dahiliye" class="btn circle-card-btn">Detaylar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="circle-card">
+                    <h5 class="circle-card-title">Kadın Hastalıkları ve Doğum</h5>
+                    <a href="poliklinlikler.html#kadinhastaliklari" class="btn circle-card-btn">Detaylar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="circle-card">
+                    <h5 class="circle-card-title">Çocuk Sağlığı</h5>
+                    <a href="poliklinlikler.html#cocuksagligi" class="btn circle-card-btn">Detaylar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="circle-card">
+                    <h5 class="circle-card-title">Genel Cerrahi</h5>
+                    <a href="poliklinlikler.html#cerrahi" class="btn circle-card-btn">Detaylar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="circle-card">
+                    <h5 class="circle-card-title">Kardiyoloji</h5>
+                    <a href="poliklinlikler.html#kardiyoloji" class="btn circle-card-btn">Detaylar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="circle-card">
+                    <h5 class="circle-card-title">Ortapedi</h5>
+                    <a href="poliklinlikler.html#ortapedi" class="btn circle-card-btn">Detaylar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="circle-card">
+                    <h5 class="circle-card-title">Göz Sağlığı</h5>
+                    <a href="poliklinlikler.html#goz" class="btn circle-card-btn">Detaylar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="circle-card">
+                    <h5 class="circle-card-title">Psikiyatri</h5>
+                    <a href="poliklinlikler.html#psikiyatri" class="btn circle-card-btn">Detaylar</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="circle-card">
+                    <h5 class="circle-card-title">Nöroloji</h5>
+                    <a href="poliklinlikler.html#noroloji" class="btn circle-card-btn">Detaylar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<footer>
+  <footer class="footer mt-5">
+  <div class="container">
+    <div class="row">
+
+      <!-- Hastane Bilgi -->
+      <div class="col-md-4">
+        <h5>Hastane Otomasyonu</h5>
+        <p>Sağlık hizmetlerinizi hızlı, güvenli ve kolay bir şekilde yönetin.</p>
+      </div>
+
+      
+
+      <!-- İletişim -->
+      <div class="col-md-4">
+        <h5>İletişim</h5>
+        <p>📍 Kocaeli, Türkiye</p>
+        <p>📞 0 (232) 000 00 00</p>
+        <p>✉ info@hastane.com</p>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <!-- Alt yazı -->
+    <div class="text-center">
+      <p class="mb-0">© 2026 Hastane Otomasyonu | Tüm hakları saklıdır</p>
+    </div>
+  </div>
+</footer>
+</footer>
+</html>

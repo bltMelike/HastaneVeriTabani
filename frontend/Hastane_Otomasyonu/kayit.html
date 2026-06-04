@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hastane - Kayıt</title>
+  <link rel="stylesheet" href="kayit.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img src="resim/logo.png" alt="Logo">
+      <a class="navbar-brand" href="anasayfa.html">HASTANE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü aç/kapat">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="hakkimizda.html">HAKKIMIZDA</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">GİRİŞ</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="hastaGirisiSifre.html">Hasta Girişi</a></li>
+              <li><a class="dropdown-item" href="doktorGirisiSifre.html">Doktor Girişi</a></li>
+              <li><a class="dropdown-item" href="hemsireGirisiSifre.html">Hemşire Girişi</a></li>
+              <li><a class="dropdown-item" href="memurGirisiSifre.html">Memur Girişi</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+    <form id="kayitFormu">
+      <div class="mb-3">
+        <label for="hastaTC" class="form-label">TC</label>
+        <input type="text" class="form-control" id="hastaTC" name="hastaTC" minlength="11" maxlength="11" inputmode="numeric" pattern="[0-9]{11}" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="hastaAd" class="form-label">Ad</label>
+        <input type="text" class="form-control" id="hastaAd" name="hastaAd" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="hastaSoyad" class="form-label">Soyad</label>
+        <input type="text" class="form-control" id="hastaSoyad" name="hastaSoyad" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="hastaEposta" class="form-label">E-posta</label>
+        <input type="email" class="form-control" id="hastaEposta" name="hastaEposta" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="hastaTlfn" class="form-label">Telefon Numarası</label>
+        <input type="tel" class="form-control" id="hastaTlfn" name="hastaTlfn" placeholder="05xx xxx xx xx" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="hastaCinsiyet" class="form-label">Cinsiyetiniz</label>
+        <select class="form-select" id="hastaCinsiyet" name="hastaCinsiyet" required>
+          <option value="" selected disabled>Seçiniz</option>
+          <option value="K">Kadın</option>
+          <option value="E">Erkek</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="hastaDgmTarih" class="form-label">Doğum Tarihi</label>
+        <input type="date" class="form-control" id="hastaDgmTarih" name="hastaDgmTarih" required>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <label for="hastaAdresUlke" class="form-label">Ülke</label>
+          <select class="form-select" id="hastaAdresUlke" name="hastaAdresUlke" required>
+            <option value="" disabled selected>Ülke Seçiniz</option>
+            <option value="Türkiye">Türkiye</option>
+          </select>
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <label for="hastaAdresil" class="form-label">İl</label>
+          <select class="form-select" id="hastaAdresil" name="hastaAdresil" required>
+            <option value="" disabled selected>İl Seçiniz</option>
+            <option value="Kocaeli">Kocaeli</option>
+            <option value="İstanbul">İstanbul</option>
+            <option value="Sakarya">Sakarya</option>
+            <option value="Eskişehir">Eskişehir</option>
+            <option value="Ankara">Ankara</option>
+            <option value="Bursa">Bursa</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label for="hastaAdresilce" class="form-label">İlçe</label>
+          <select class="form-select" id="hastaAdresilce" name="hastaAdresilce" required disabled>
+            <option value="" disabled selected>Önce il seçiniz</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="hastaAdres" class="form-label">Açık Adres</label>
+        <textarea class="form-control" id="hastaAdres" name="hastaAdres" rows="2" placeholder="Mahalle, cadde, sokak..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+    </form>
+  </main>
+
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Hastane Otomasyonu</h5>
+          <p>Sağlık hizmetlerinizi hızlı, güvenli ve kolay bir şekilde yönetin.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>İletişim</h5>
+          <p>Kocaeli, Türkiye</p>
+          <p>0 (232) 000 00 00</p>
+          <p>info@hastane.com</p>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p class="mb-0">© 2026 Hastane Otomasyonu | Tüm hakları saklıdır</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const ilceler = {
+      Kocaeli: ['Darıca', 'Gebze', 'İzmit', 'Körfez', 'Gölcük'],
+      İstanbul: ['Kadıköy', 'Üsküdar', 'Beşiktaş', 'Fatih', 'Bakırköy'],
+      Sakarya: ['Adapazarı', 'Serdivan', 'Erenler', 'Akyazı', 'Sapanca'],
+      Eskişehir: ['Odunpazarı', 'Tepebaşı', 'Sivrihisar', 'Çifteler'],
+      Ankara: ['Çankaya', 'Keçiören', 'Mamak', 'Yenimahalle', 'Etimesgut'],
+      Bursa: ['Osmangazi', 'Nilüfer', 'Yıldırım', 'Mudanya', 'İnegöl']
+    };
+
+    const ilSelect = document.getElementById('hastaAdresil');
+    const ilceSelect = document.getElementById('hastaAdresilce');
+
+    ilSelect.addEventListener('change', function() {
+      const secilenIl = this.value;
+      const secilenIlceler = ilceler[secilenIl] || [];
+
+      ilceSelect.innerHTML = '<option value="" disabled selected>İlçe Seçiniz</option>';
+
+      secilenIlceler.forEach(function(ilce) {
+        const option = document.createElement('option');
+        option.value = ilce;
+        option.textContent = ilce;
+        ilceSelect.appendChild(option);
+      });
+
+      ilceSelect.disabled = secilenIlceler.length === 0;
+    });
+
+    document.getElementById('kayitFormu').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const formProps = Object.fromEntries(formData);
+
+      if (formProps.hastaTlfn?.startsWith('0')) {
+        formProps.hastaTlfn = formProps.hastaTlfn.substring(1);
+      }
+
+      try {
+        const response = await fetch('http://localhost:5000/api/kayit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formProps)
+        });
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          alert('Kayıt başarıyla tamamlandı! Şifreniz TC numaranızın son 6 hanesidir.');
+          this.reset();
+          ilceSelect.innerHTML = '<option value="" disabled selected>Önce il seçiniz</option>';
+          ilceSelect.disabled = true;
+          window.location.href = 'hastaGirisiSifre.html';
+        } else {
+          alert('Hata: ' + (result.message || 'Kayıt tamamlanamadı.'));
+        }
+      } catch (error) {
+        console.error('Kayıt hatası:', error);
+        alert('Sunucuyla bağlantı kurulamadı.');
+      }
+    });
+  </script>
+  <script src="giriskontrol.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

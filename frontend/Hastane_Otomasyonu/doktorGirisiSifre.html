@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hastane - Doktor Girişi</title>
+  <link rel="stylesheet" href="doktorGirisiSifre.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img src="resim/logo.png" alt="Logo">
+      <a class="navbar-brand" href="anasayfa.html">HASTANE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü aç/kapat">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="hakkimizda.html">HAKKIMIZDA</a></li>
+          <li class="nav-item"><a class="nav-link" href="kayit.html">KAYIT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5" style="max-width: 500px;">
+    <form onsubmit="event.preventDefault(); doktorGiris();">
+      <div class="mb-3">
+        <label for="tc" class="form-label">TC Kimlik No</label>
+        <input type="text" id="tc" class="form-control" maxlength="11" required>
+      </div>
+      <div class="mb-3">
+        <label for="sifre" class="form-label">Şifreniz</label>
+        <input type="password" id="sifre" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+    </form>
+  </main>
+
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Hastane Otomasyonu</h5>
+          <p>Sağlık hizmetlerinizi hızlı, güvenli ve kolay bir şekilde yönetin.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>İletişim</h5>
+          <p>Kocaeli, Türkiye</p>
+          <p>0 (232) 000 00 00</p>
+          <p>info@hastane.com</p>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center"><p class="mb-0">© 2026 Hastane Otomasyonu | Tüm hakları saklıdır</p></div>
+    </div>
+  </footer>
+
+  <script>
+    function digerRolOturumlariniTemizle() {
+      sessionStorage.removeItem('hastaID');
+      sessionStorage.removeItem('hastaAdSoyad');
+      sessionStorage.removeItem('aktifHemsireID');
+      sessionStorage.removeItem('aktifHemsirePoliklinikID');
+      sessionStorage.removeItem('aktifMemurID');
+      sessionStorage.removeItem('memurTC');
+    }
+
+    async function doktorGiris() {
+      const tc = document.getElementById('tc').value.trim();
+      const sifre = document.getElementById('sifre').value.trim();
+
+      if (!tc || !sifre) {
+        alert('Lütfen tüm alanları doldurun.');
+        return;
+      }
+
+      try {
+        const response = await fetch('http://localhost:5000/api/doktor-giris', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tc, sifre })
+        });
+        const veri = await response.json();
+
+        if (!response.ok || !veri.success) {
+          alert(veri.message || 'Hatalı TC Kimlik Numarası veya şifre.');
+          return;
+        }
+
+        const doktorID = veri.doktorID || veri.personelID || veri.personel?.personelID;
+        const personelTuruID = String(veri.personelTuruID || veri.personel?.personelTuruID || '');
+
+        if (!doktorID || personelTuruID !== '1') {
+          alert('Doktor oturum bilgisi doğrulanamadı.');
+          return;
+        }
+
+        digerRolOturumlariniTemizle();
+        sessionStorage.setItem('doktorID', doktorID);
+        sessionStorage.setItem('personelID', doktorID);
+        sessionStorage.setItem('personelTuruID', personelTuruID);
+        sessionStorage.setItem('personelRol', 'doctor');
+        sessionStorage.setItem('doktorAdSoyad', `${veri.Ad || veri.personel?.Ad || ''} ${veri.Soyad || veri.personel?.Soyad || ''}`.trim());
+        sessionStorage.setItem('doktorTC', tc);
+
+        window.location.href = 'doktorGirisi.html';
+      } catch (error) {
+        console.error('Doktor giriş hatası:', error);
+        alert('Sisteme bağlanırken bir hata oluştu.');
+      }
+    }
+  </script>
+  <script src="giriskontrol.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

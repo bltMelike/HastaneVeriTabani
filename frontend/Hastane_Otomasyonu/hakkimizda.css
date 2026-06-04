@@ -1,0 +1,206 @@
+/* LOGO */
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* NAVBAR YAZI */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* NAV LINKLER */
+.nav-link {
+  font-weight: 500;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+
+.footer {
+  background-color: #b6e2f0;
+  color: black;
+  padding: 40px 0;
+}
+
+.footer h5 {
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer hr {
+  background-color: white;
+}
+/* ==========================================================================
+   Genel Ayarlar ve Font Düzenlemeleri
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Hero (Giriş) Alanı Tasarımı
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(135deg, #102a43 0%, #243b53 100%);
+    color: #ffffff;
+    padding: 100px 0;
+    position: relative;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: linear-gradient(to right, #007bff, #00d2ff);
+}
+
+.hero-section h1 {
+    letter-spacing: -1px;
+}
+
+.hero-section p {
+    color: #bcccdc;
+    font-size: 1.15rem;
+}
+
+/* ==========================================================================
+   Biz Kimiz / İçerik Alanı Tasarımı
+   ========================================================================== */
+.tracking-wider {
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+}
+
+.leading-relaxed {
+    line-height: 1.7;
+}
+
+/* Görsel Konteyneri ve Efektleri */
+.image-overlay-box {
+    position: relative;
+    padding: 10px;
+}
+
+.image-overlay-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #007bff;
+    top: 25px;
+    left: 25px;
+    z-index: -1;
+    border-radius: 1rem;
+    transition: all 0.4s ease;
+}
+
+.image-overlay-box:hover::before {
+    top: 15px;
+    left: 15px;
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.main-img {
+    transition: transform 0.4s ease;
+}
+
+.image-overlay-box:hover .main-img {
+    transform: scale(1.02);
+}
+
+/* ==========================================================================
+   Misyon - Vizyon Kartları Tasarımı
+   ========================================================================== */
+.cards-section {
+    background-color: #f8fafc !important;
+}
+
+.core-card {
+    border: none;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    cursor: pointer;
+}
+
+.core-card:hover {
+    transform: translateY(-12px) scale(1.02);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Kartların İçindeki Yuvarlak İkon Alanı */
+.card-icon-container {
+    width: 70px;
+    height: 70px;
+    background-color: #e6f2ff;
+    color: #007bff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.core-card:hover .card-icon-container {
+    background-color: #007bff;
+    color: #ffffff;
+    transform: rotate(360deg);
+}
+
+.card-heading {
+    color: #102a43;
+}
+
+/*İstatistik Bölümü Tasarımı*/
+.stats-section {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+}
+
+.stat-item {
+    padding: 20px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.stat-item:hover {
+    background-color: #f8fafc;
+}
+
+.stat-item h3 {
+    color: #007bff !important;
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 0.95rem;
+    color: #486581 !important;
+}

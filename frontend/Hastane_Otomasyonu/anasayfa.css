@@ -1,0 +1,126 @@
+/* LOGO */
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* NAVBAR YAZI */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* NAV LINKLER */
+.nav-link {
+  font-weight: 500;
+}
+
+/* HOVER EFEKTI */
+.nav-link:hover {
+  color: #f84848 !important;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.carousel-item img {
+  height: 850px;
+  object-fit: cover;
+}
+.card-section {
+    margin-top: 60px;
+    padding-left: 10px; 
+}
+
+/* ==========================================================================
+   Tam Yuvarlak ve Ortalanmış Metin Kartları Stili
+   ========================================================================== */
+
+.circle-card {
+    /* Kartı tam bir daire yapmak için genişlik ve yükseklik eşit olmalı */
+    width: 320px;
+    height: 320px;
+    border-radius: 50% !important; /* Kusursuz yuvarlaklık sağlar */
+    
+    /* İçindeki her şeyi dikeyde ve yatayda tam ortalama (Flexbox) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Yazıların daire çeperine dayanmaması için iç boşluk */
+    padding: 30px; 
+    
+    background-color: #e2eaec;
+    border: 1px solid #eef2f5;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05); /* Yumuşak gölge efekti */
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fareyle üzerine gelindiğinde (Hover) efektler */
+.circle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(16, 42, 67, 0.12);
+    border-color: transparent;
+}
+
+/* Başlık Stili */
+.circle-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 12px;
+}
+
+/* Açıklama Metni Stili */
+.circle-card-text {
+    font-size: 0.88rem;
+    color: #718096;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    /* Uzun metinlerin daireden taşmasını önlemek için maksimum genişlik */
+    max-width: 90%; 
+}
+
+/* Buton Stili */
+.circle-card-btn {
+    background-color: #7bbdc3 !important;
+    color: #050303 !important;
+    border-radius: 20px !important; /* Butonun kendisi de oval/yuvarlak hatlı */
+    padding: 6px 22px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    border: none !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.circle-card-btn:hover {
+    background-color: #5b8b90 !important;
+    color:#e2eaec !important;
+}
+
+.footer {
+  background-color: #b6e2f0;
+  color: black;
+  padding: 40px 0;
+}
+
+.footer h5 {
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer hr {
+  background-color: white;
+}

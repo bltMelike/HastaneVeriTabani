@@ -1,0 +1,63 @@
+/* LOGO */
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* NAVBAR YAZI */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* NAV LINKLER */
+.nav-link {
+  font-weight: 500;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+
+.footer {
+  background-color: #b6e2f0;
+  color: black;
+  padding: 40px 0;
+}
+
+.footer h5 {
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer hr {
+  background-color: white;
+}
+form {
+    max-width: 400px;         /* Formun genişliğini ideal bir boyuta küçülttük */
+    margin: 50px auto;        /* Üstten-alttan 50px boşluk bırakır, SAĞDAN-SOLDAN OTOMATİK ORTALAR */
+
+    /* 2. Şık Kutu Tasarımı */
+    padding: 30px;            /* Elemanlar kenara yapışmasın diye iç boşluk */
+    background-color: #ffffff;/* Form arka planı beyaz */
+    border: 1px solid #dee2e6;/* İnce gri kenarlık */
+    border-radius: 10px;      /* Köşeleri yuvarlatma */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Hafif gölge */
+}
+
+/* Butonun form kutusuna tam yayılması ve güzel durması için */
+form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+}

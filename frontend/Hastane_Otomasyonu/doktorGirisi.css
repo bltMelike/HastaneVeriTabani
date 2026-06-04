@@ -1,0 +1,65 @@
+/* LOGO */
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* NAVBAR YAZI */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* NAV LINKLER */
+.nav-link {
+  font-weight: 500;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+
+.footer {
+  background-color: #b6e2f0;
+  color: black;
+  padding: 40px 0;
+}
+
+.footer h5 {
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer hr {
+  background-color: white;
+}
+
+/* Sidebar genelindeki tüm butonların pasif/normal hali (1. Görseldeki Açık Gri) */
+.hospital-sidebar .list-group-item {
+    background-color: #E9ECEF !important;
+    border: 1px solid #dee2e6;
+    color: #212529 !important; /* Pasif yazı rengi (Koyu Gri) */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Tıklanan / Aktif olan butonun rengi (1. Görseldeki Koyu Kurumsal Mavi) */
+.hospital-sidebar .list-group-item.active {
+    background-color: #083B7C !important;
+    border-color: #083B7C !important;
+    color: #FFFFFF !important; /* Aktif yazı rengi (Beyaz) */
+}
+
+/* Aktif olmayan butonların üzerine gelindiğinde (Hover) hafif kararma efekti */
+.hospital-sidebar .list-group-item:hover:not(.active) {
+    background-color: #dfe2e6 !important;
+}

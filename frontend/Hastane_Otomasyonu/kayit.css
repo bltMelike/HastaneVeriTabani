@@ -1,0 +1,83 @@
+/* LOGO */
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* NAVBAR YAZI */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* NAV LINKLER */
+.nav-link {
+  font-weight: 500;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+
+.footer {
+  background-color: #b6e2f0;
+  color: black;
+  padding: 40px 0;
+}
+
+.footer h5 {
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer hr {
+  background-color: white;
+}
+
+/* 1. <form> etiketini genişletip ortalıyoruz */
+form {
+    /* Genişliği Artır ve Ortala */
+    max-width: 750px;          /* Formu daha ferah ve geniş yapmak için 750px'e çıkardık */
+    margin: 40px auto;         /* Üstten-alttan boşluk bırakır, sağdan-soldan otomatik ortalar */
+    
+    max-width: 750px;
+    margin: 0 auto 40px auto; /* Üst marjını sıfırladık çünkü yazı zaten boşluk bırakıyor */
+    padding: 40px;
+    /* Şık Kutu Tasarımı */
+    padding: 40px;             /* Genişleyen forma uygun olarak iç boşluğu da biraz artırdık */
+    background-color: #ffffff; /* Form arka planı beyaz */
+    border: 1px solid #e1e4e8; /* İnce gri kenarlık */
+    border-radius: 12px;       /* Köşeleri yuvarlatma */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); /* Arkaya hafif, modern bir gölge */
+}
+
+/* 2. "Üye Ol" butonunun form tabanına tam yayılması ve şık durması için */
+form button[type="submit"] {
+    width: 100%;               /* Butonu form genişliğine eşitler */
+    padding: 12px;             /* Tıklamayı kolaylaştırmak için butonu dikeyde genişletir */
+    font-weight: 600;          /* Yazıyı biraz kalınlaştırır */
+    margin-top: 20px;          /* Açık adres kutusu ile butonun arasını açar */
+}
+
+/* 3. Form başlıklarının (Label) daha net okunması için küçük bir dokunuş */
+.form-label {
+    font-weight: 500;          /* Yazıları hafif belirginleştirir */
+    color: #495057;            /* Gözü yormayan koyu gri renk */
+}.baslik {
+    max-width: 750px;         /* Formla birebir aynı genişlik */
+    margin: 40px auto 0px auto; /* Üstten 40px, SAĞDAN SOLDAN OTOMATİK, Alttan -30px (Formu yukarı çeker) */
+    font-size: 24px;
+    font-weight: 700;
+    color: #140058;
+    padding-left: 5px;        /* Çizgiyle hizalanması için */
+}

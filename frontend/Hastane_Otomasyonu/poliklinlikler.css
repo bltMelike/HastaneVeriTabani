@@ -1,0 +1,112 @@
+/* LOGO */
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* NAVBAR YAZI */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* NAV LINKLER */
+.nav-link {
+  font-weight: 500;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f7fb;
+}
+
+/* ANA SAYFA */
+.title {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 60%;
+    margin: 40px auto;
+}
+
+.grid a {
+    background: #1e3a8a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+/* DETAY SAYFA */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    color: #1e3a8a;
+}
+
+.doctors {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.doctors div {
+    flex: 1;
+    background: #e0f2fe;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+.footer {
+  background-color: #b6e2f0;
+  color: black;
+  padding: 40px 0;
+}
+
+.footer h5 {
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer hr {
+  background-color: white;
+}

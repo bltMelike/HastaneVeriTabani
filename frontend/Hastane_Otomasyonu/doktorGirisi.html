@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hastane - Doktor Paneli</title>
+  <link rel="stylesheet" href="doktorGirisi.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img src="resim/logo.png" alt="Logo">
+      <a class="navbar-brand" href="anasayfa.html">HASTANE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü aç/kapat">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="hakkimizda.html">HAKKIMIZDA</a></li>
+          <li class="nav-item">
+            <button id="btnCikisYap" style="background: linear-gradient(135deg, #ff416c, #ff4b2b); 
+          color: white; font-weight: 600; padding: 10px 20px; border: none; 
+          border-radius: 8px; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3); font-size: 14px;">
+            Çıkış Yap</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-top m-4">
+    <div class="d-flex align-items-start gap-4">
+      <div class="list-group hospital-sidebar sidebar-menu flex-shrink-0" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <button class="list-group-item list-group-item-action active" id="v-pills-hasta-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hasta" type="button" role="tab" onclick="yukleAktifHastalar()">Hastalarınız</button>
+        <button class="list-group-item list-group-item-action" id="v-pills-tahlil-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tahlil" type="button" role="tab" onclick="tahlilFormunuHazirla()">Tahlil İste</button>
+        <button class="list-group-item list-group-item-action" id="v-pills-sonuc-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sonuc" type="button" role="tab" onclick="yukleTahlilSonuclari()">Sonuçlarınız</button>
+        <button class="list-group-item list-group-item-action" id="v-pills-recete-tab" data-bs-toggle="pill" data-bs-target="#v-pills-recete" type="button" role="tab" onclick="receteFormunuHazirla()">Reçete Yaz</button>
+      </div>
+
+      <div class="tab-content flex-grow-1 content-panel p-4" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-hasta" role="tabpanel">
+          <h4 class="text-primary mb-3">Bekleyen Hasta Bilgileri</h4>
+          <p class="text-muted">Muayene edilmemiş aktif hastalarınız aşağıda listelenmektedir.</p>
+          <div id="aktif-hasta-listesi"><div class="alert alert-info">Hastalar yükleniyor...</div></div>
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-tahlil" role="tabpanel">
+          <h4 class="text-secondary mb-3">Tahlil İsteme Formu</h4>
+          <div class="p-4 border rounded bg-white" style="max-width: 620px;">
+            <form id="tahlil-isteme-formu">
+              <div class="mb-3">
+                <label for="tahlil-hasta-secimi" class="form-label fw-bold">Hasta Seçin</label>
+                <select id="tahlil-hasta-secimi" class="form-select" required>
+                  <option value="">Önce hastaları yükleyin...</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="tahlil-turu" class="form-label fw-bold">Tahlil Türü</label>
+                <input type="text" id="tahlil-turu" class="form-control" placeholder="Örn: Kan Sayımı, İdrar Tahlili, Biyokimya" required>
+              </div>
+              <div class="mb-3">
+                <label for="tahlil-neden" class="form-label fw-bold">İsteme Nedeni</label>
+                <textarea id="tahlil-neden" class="form-control" rows="3" placeholder="Tahlilin istenme gerekçesi..."></textarea>
+              </div>
+              <button type="button" class="btn btn-primary w-100" onclick="tahlilIste()">Tahlil İsteğini Gönder</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-sonuc" role="tabpanel">
+          <h4 class="text-secondary mb-3">İstediğiniz Tahliller ve Sonuçları</h4>
+          <div id="tahlil-sonuc-listesi"><div class="alert alert-info">Sonuçlar yükleniyor...</div></div>
+        </div>
+
+        <div class="tab-pane fade" id="v-pills-recete" role="tabpanel">
+          <h4 class="text-secondary mb-3">Reçete Yazma Formu</h4>
+          <div class="p-4 border rounded bg-white" style="max-width: 620px;">
+            <form id="recete-yazma-formu">
+              <div class="mb-3">
+                <label for="recete-hasta-secimi" class="form-label fw-bold">Hasta Seçin</label>
+                <select id="recete-hasta-secimi" class="form-select" required>
+                  <option value="">Önce hastaları yükleyin...</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="recete-ilac-adi" class="form-label fw-bold">İlaç Adı ve Kullanım Detayı</label>
+                <input type="text" id="recete-ilac-adi" class="form-control" placeholder="Örn: Parol 500mg (Günde 2 defa)" required>
+              </div>
+              <button type="button" class="btn btn-primary w-100" onclick="receteYaz()">Reçeteyi Gönder</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"><h5>Hastane Otomasyonu</h5><p>Sağlık hizmetlerinizi hızlı, güvenli ve kolay bir şekilde yönetin.</p></div>
+        <div class="col-md-4"><h5>İletişim</h5><p>Kocaeli, Türkiye</p><p>0 (232) 000 00 00</p><p>info@hastane.com</p></div>
+      </div>
+      <hr>
+      <div class="text-center"><p class="mb-0">© 2026 Hastane Otomasyonu | Tüm hakları saklıdır</p></div>
+    </div>
+  </footer>
+
+  <script src="oturum.js"></script>
+  <script src="doktorGirisi.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

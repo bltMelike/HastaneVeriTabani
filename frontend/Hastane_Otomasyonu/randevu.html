@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hastane - Randevu</title>
+  <link rel="stylesheet" href="randevu.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img src="resim/logo.png" alt="Logo">
+      <a class="navbar-brand" href="anasayfa.html">HASTANE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü aç/kapat">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="hakkimizda.html">HAKKIMIZDA</a></li>
+          <li class="nav-item"><a class="nav-link active" href="randevu.html">RANDEVU</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4" style="max-width: 720px;">
+    <form id="randevuFormu" onsubmit="event.preventDefault();">
+      <div class="mb-3">
+        <label for="poliklinikler" class="form-label">Poliklinik</label>
+        <select class="form-select" id="poliklinikler" required>
+          <option value="" selected disabled>Seçiniz</option>
+          <option value="1">Kulak Burun Boğaz</option>
+          <option value="2">İç Hastalıkları (Dahiliye)</option>
+          <option value="3">Kadın Hastalıkları ve Doğum</option>
+          <option value="4">Çocuk Sağlığı</option>
+          <option value="5">Genel Cerrahi</option>
+          <option value="6">Kardiyoloji</option>
+          <option value="7">Ortopedi</option>
+          <option value="8">Göz Sağlığı</option>
+          <option value="9">Psikiyatri</option>
+          <option value="10">Nöroloji</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="doktor" class="form-label">Doktor</label>
+        <select class="form-select" id="doktor" required disabled>
+          <option value="" disabled selected>Önce poliklinik seçiniz</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="randevuTarihi" class="form-label">Randevu tarihi</label>
+        <input type="date" class="form-control" id="randevuTarihi" required disabled>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label d-block">Randevu saati</label>
+        <div id="saatButonlariKutusu" class="d-flex flex-wrap gap-2 py-2">
+          <span class="text-muted small">Önce tarih seçiniz...</span>
+        </div>
+        <input type="hidden" id="randevuSaati" required>
+      </div>
+
+      <button type="button" class="btn btn-primary w-100 circle-card-btn" onclick="randevuAlOlustur()">Randevu Al</button>
+    </form>
+  </main>
+
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Hastane Otomasyonu</h5>
+          <p>Sağlık hizmetlerinizi hızlı, güvenli ve kolay bir şekilde yönetin.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>İletişim</h5>
+          <p>Kocaeli, Türkiye</p>
+          <p>0 (232) 000 00 00</p>
+          <p>info@hastane.com</p>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center"><p class="mb-0">© 2026 Hastane Otomasyonu | Tüm hakları saklıdır</p></div>
+    </div>
+  </footer>
+
+  <script src="randevu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const poliklinikSelect = document.getElementById('poliklinikler');
+      const doktorSelect = document.getElementById('doktor');
+      const tarihInput = document.getElementById('randevuTarihi');
+      const saatKutusu = document.getElementById('saatButonlariKutusu');
+      const randevuSaati = document.getElementById('randevuSaati');
+
+      poliklinikSelect.addEventListener('change', () => {
+        doktorSelect.innerHTML = '<option value="" disabled selected>Doktorlar yükleniyor...</option>';
+        doktorSelect.disabled = true;
+        tarihInput.value = '';
+        tarihInput.disabled = true;
+        randevuSaati.value = '';
+        saatKutusu.innerHTML = '<span class="text-muted small">Önce tarih seçiniz...</span>';
+        doktorlariVeritabanindanCek(poliklinikSelect.value);
+      });
+
+      doktorSelect.addEventListener('change', () => {
+        tarihInput.disabled = false;
+        tarihInput.value = '';
+        randevuSaati.value = '';
+        saatKutusu.innerHTML = '<span class="text-muted small">Önce tarih seçiniz...</span>';
+      });
+
+      tarihInput.addEventListener('change', () => {
+        if (doktorSelect.value && tarihInput.value) {
+          saatleriVeDurumlariListele(doktorSelect.value, tarihInput.value);
+        }
+      });
+    });
+
+    function randevuAlOlustur() {
+      veritabaninaRandevuKaydet();
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
