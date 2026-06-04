@@ -26,7 +26,7 @@ Proje, katmanlı ve modüler bir mimari yapı üzerine inşa edilmiştir:
 3. **Randevu İşlemi:** Hasta randevu talep ettiğinde doktor müsaitliği ve hastanın yaşı veritabanında kontrol edilir, süreç başarılıysa kayıt tetiklenir.
 
 > **Mimarisi ve Akış Şeması Görseli:**
-![İşlem Akış Şeması](frontend/Hastane_Otomasyonu/resim/islemAkisSemasi.drawio.png)
+![İşlem Akış Şeması](frontend/Hastane_Otomasyonu/resim/İslemAkisSemasi.jpeg)
 
 ---
 
@@ -35,7 +35,7 @@ Proje, katmanlı ve modüler bir mimari yapı üzerine inşa edilmiştir:
 Veritabanı tasarımı **5N (Normalizasyon)** kurallarına tam uyumlu olarak **7 ana tablodan** oluşmaktadır. Sistemde veri bütünlüğünü sağlayan `Primary Key (PK)`, `Foreign Key (FK)`, `UNIQUE` ve `CHECK` kısıtlayıcıları eksiksiz kurgulanmıştır.
 
 ### Veri Tabanı İlişkisel ER Diyagramı
-> ![ER Diyagramı](frontend/Hastane_Otomasyonu/resim/ER_diyagrami.png)
+> ![ER Diyagramı](frontend/Hastane_Otomasyonu/resim/ERDiyagrami.jpeg)
 
 ### Tablo Yapıları
 1. **Hasta:** Hastaların kişisel bilgilerini, T.C. kimlik numaralarını (`CHECK` kısıtlamalı 11 haneli), adres bilgilerini ve sistem şifrelerini tutar.
