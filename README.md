@@ -96,13 +96,18 @@ Bu proje; hastaların, doktorların, hemşirelerin ve idari memurların kendiler
 ## 8. Projenin Kurulumu ve Çalıştırılması
 1. **Depoyu Klonlayın:**
 ```bash
-git clone [https://github.com/kullanici_adi/VeriTabaniHastaneUygulamasi.git](https://github.com/kullanici_adi/VeriTabaniHastaneUygulamasi.git)
+[git clone [https://github.com/kullanici_adi/VeriTabaniHastaneUygulamasi.git](https://github.com/kullanici_adi/VeriTabaniHastaneUygulamasi.git)](https://github.com/bltMelike/HastaneVeriTabani.git)
 ```
 2. **Veri Tabanını Oluşturun:**
-* `52_sql_betikleri.txt` dosyasındaki SQL sorgularını SSMS üzerinde sırasıyla çalıştırarak `HastaneManagement` veritabanını, tabloları, trigger, procedure ve test verilerini ayağa kaldırın.
+* `veriTabani` dosyasındaki SQL sorgularını SSMS üzerinde sırasıyla çalıştırarak `HastaneManagement` veritabanını, tabloları, trigger, procedure ve test verilerini ayağa kaldırın.
 3. **Bağımlılıkları Yükleyin ve Çalıştırın:**
 ```bash
 npm install
 npm start
 ```
+3. **Çalıştırmadan Önce Bağlantı Dosyanızı Kurmayı Unutmayın:**
+```bash
+node server.js
+```
+
 4. Tarayıcı üzerinden `http://localhost:5000` (veya belirlenen port) adresinden uygulamaya giriş yapın.
